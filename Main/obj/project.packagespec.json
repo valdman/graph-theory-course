@@ -1,0 +1,40 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/boris/Projects/Net/Kurenkov/Main/Main.csproj",
+    "projectName": "Main",
+    "projectPath": "/Users/boris/Projects/Net/Kurenkov/Main/Main.csproj",
+    "outputPath": "/Users/boris/Projects/Net/Kurenkov/Main/obj/",
+    "projectStyle": "PackageReference",
+    "originalTargetFrameworks": [
+      "netcoreapp2.0"
+    ],
+    "frameworks": {
+      "netcoreapp2.0": {
+        "projectReferences": {
+          "/Users/boris/Projects/Net/Kurenkov/GraphService/GraphService.csproj": {
+            "projectPath": "/Users/boris/Projects/Net/Kurenkov/GraphService/GraphService.csproj"
+          },
+          "/Users/boris/Projects/Net/Kurenkov/Graph/Graph.csproj": {
+            "projectPath": "/Users/boris/Projects/Net/Kurenkov/Graph/Graph.csproj"
+          }
+        }
+      }
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "target": "Package",
+          "version": "2.0.0"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

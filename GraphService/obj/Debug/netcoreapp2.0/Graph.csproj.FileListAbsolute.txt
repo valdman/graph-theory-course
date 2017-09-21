@@ -1,0 +1,8 @@
+/Users/boris/Projects/Net/Kurenkov/Graph/bin/Debug/netcoreapp2.0/Graph.deps.json
+/Users/boris/Projects/Net/Kurenkov/Graph/bin/Debug/netcoreapp2.0/Graph.dll
+/Users/boris/Projects/Net/Kurenkov/Graph/bin/Debug/netcoreapp2.0/Graph.pdb
+/Users/boris/Projects/Net/Kurenkov/Graph/obj/Debug/netcoreapp2.0/Graph.csproj.CoreCompileInputs.cache
+/Users/boris/Projects/Net/Kurenkov/Graph/obj/Debug/netcoreapp2.0/Graph.AssemblyInfoInputs.cache
+/Users/boris/Projects/Net/Kurenkov/Graph/obj/Debug/netcoreapp2.0/Graph.AssemblyInfo.cs
+/Users/boris/Projects/Net/Kurenkov/Graph/obj/Debug/netcoreapp2.0/Graph.dll
+/Users/boris/Projects/Net/Kurenkov/Graph/obj/Debug/netcoreapp2.0/Graph.pdb

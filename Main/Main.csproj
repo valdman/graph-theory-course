@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraphService\GraphService.csproj" />
+    <ProjectReference Include="..\Graph\Graph.csproj" />
+  </ItemGroup>
+</Project>
