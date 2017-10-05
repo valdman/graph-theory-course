@@ -46,6 +46,8 @@ namespace GraphService
         {
             MergedArcs.Insert(N, j);
             MergedArcs.Insert(N, i);
+            
+            //todo: add arc to BundleHeads and BundleLists too
         }
 
         public void DeleteArc(int numberOfArc)
@@ -110,14 +112,24 @@ namespace GraphService
             stack.Push(vertex);
             while (stack.Count > 0)
             {
-                var currentVertex = stack.Pop();
+                var currentVertex = stack.Peek();
                 Components[currentVertex] = color;
 
-                var nextVertexesFromCurrentVertex = GetAllArcsFrom(currentVertex).Select(arc => arc.ToNumber);
-                foreach (var nextVertex in nextVertexesFromCurrentVertex)
+                bool isEnd = true;
+                
+                for (var k = BundleHeads[currentVertex]; k != -1; k = BundleLists[k] )
                 {
-                    stack.Push(nextVertex);
+                    var nextVertex = GetArcByNumber(k).ToNumber;
+                    if (Components[nextVertex] == -1)
+                    {
+                        isEnd = false;
+                        stack.Push(nextVertex);
+                        break;
+                    }
                 }
+
+                if (isEnd)
+                    stack.Pop();
             }
         }
 
