@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace GraphService
@@ -33,9 +34,21 @@ namespace GraphService
                 BundleLists[k] = BundleHeads[i]; 
                 BundleHeads[i] = k; 
             } 
+            
+            Components = new int[BundleHeads.Count];
+            for (int i = 0; i < Components.Count; i++)
+            {
+                Components[i] = -1;
+            }
         }
 
         public void Add(int i, int j)
+        {
+            MergedArcs.Insert(N, j);
+            MergedArcs.Insert(N, i);
+        }
+
+        public void DeleteArc(int numberOfArc)
         {
             throw new NotImplementedException();
         }
@@ -74,8 +87,39 @@ namespace GraphService
         public IList<int> MergedArcs { get; private set; }  //IJ
         public IList<int> BundleHeads { get; private set; } //H
         public IList<int> BundleLists { get; private set; } //L
+        public IList<int> Components { get; set; }
 
         public int N { get; private set; }
+
+        public void ConnectedComponentsViaBFS()
+        {
+            var currentColor = 0;
+            
+            for (var currentVertexNumber = 0; currentVertexNumber < BundleHeads.Count; currentVertexNumber++)
+            {
+                if( Components[currentVertexNumber] == -1)
+                {
+                    BFS(currentVertexNumber, currentColor++);
+                }
+            }
+        }
+
+        private void BFS(int vertex, int color)
+        {
+            var queue = new Queue<int>();
+            queue.Enqueue(vertex);
+            while (queue.Count > 0)
+            {
+                var currentVertex = queue.Dequeue();
+                Components[currentVertex] = color;
+
+                var nextVertexesFromCurrentVertex = GetAllArcsFrom(currentVertex).Select(arc => arc.ToNumber);
+                foreach (var nextVertex in nextVertexesFromCurrentVertex)
+                {
+                    queue.Enqueue(nextVertex);
+                }
+            }
+        }
     }
 
     public class Arc

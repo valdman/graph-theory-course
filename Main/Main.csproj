@@ -5,6 +5,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\GraphService\GraphService.csproj" />
-    <ProjectReference Include="..\Graph\Graph.csproj" />
+    <ProjectReference Include="..\GraphService\GraphService.csproj" />
   </ItemGroup>
 </Project>
