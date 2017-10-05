@@ -91,6 +91,36 @@ namespace GraphService
 
         public int N { get; private set; }
 
+        public void ConnectedComponentsViaDFS()
+        {
+            var currentColor = 0;
+            
+            for (var currentVertexNumber = 0; currentVertexNumber < BundleHeads.Count; currentVertexNumber++)
+            {
+                if( Components[currentVertexNumber] == -1)
+                {
+                    DFS(currentVertexNumber, currentColor++);
+                }
+            }
+        }
+
+        private void DFS(int vertex, int color)
+        {
+            var stack = new Stack<int>();
+            stack.Push(vertex);
+            while (stack.Count > 0)
+            {
+                var currentVertex = stack.Pop();
+                Components[currentVertex] = color;
+
+                var nextVertexesFromCurrentVertex = GetAllArcsFrom(currentVertex).Select(arc => arc.ToNumber);
+                foreach (var nextVertex in nextVertexesFromCurrentVertex)
+                {
+                    stack.Push(nextVertex);
+                }
+            }
+        }
+
         public void ConnectedComponentsViaBFS()
         {
             var currentColor = 0;

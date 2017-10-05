@@ -13,7 +13,7 @@ namespace Main
                 new[] {1,2,2,3,3,5,6});
             WriteGraphToFile(graph, "out.txt");
             
-            graph.ConnectedComponentsViaBFS();
+            graph.ConnectedComponentsViaDFS();
             WriteArrayToConsole(graph.Components);
         }
 
