@@ -9,8 +9,11 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            var graph = new Graph(new[] {0,0,1,1,2,4,5},
-                new[] {1,2,2,3,3,5,6});
+            var graph = new Graph
+            (
+                new[] {0,0,1,1,2,4,5},
+                new[] {1,2,2,3,3,5,6}
+            );
             WriteGraphToFile(graph, "out.txt");
             
             graph.ConnectedComponentsViaDFS();
